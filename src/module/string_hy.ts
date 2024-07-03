@@ -1,6 +1,13 @@
-const ulTag = require('../module/ul_hy');
+import ul from '../module/ul_hy';
 
 const string = {
+  /**
+   * * 24.07.03 (Wed) 정호연
+   * * HTML 구조 모듈화
+   * @param content <ul>, <li> tag
+   * @param src ./dist/module/???.js
+   * @returns HTML 구조
+   */
   main: (content: string, src: string) => {
     return `<!DOCTYPE html>
 <html lang="en">
@@ -20,8 +27,7 @@ const string = {
   },
 };
 
-let a = ulTag('<li></li>');
-
+let a = ul('<li></li>');
 let test = string.main(a, './li_hy.ts');
 
 // console.log(test);
