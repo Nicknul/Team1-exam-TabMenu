@@ -1,3 +1,5 @@
+const ulTag = require('../module/ul_hy');
+
 const string = {
   main: (content: string, src: string) => {
     return `<!DOCTYPE html>
@@ -18,6 +20,10 @@ const string = {
   },
 };
 
-// console.log(string.main('정호연'));
+let a = ulTag('<li></li>');
+
+let test = string.main(a, './li_hy.ts');
+
+// console.log(test);
 
 module.exports = string;
