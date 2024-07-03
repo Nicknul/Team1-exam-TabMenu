@@ -9,7 +9,7 @@ const string = {
   </head>
   <body>
     <div id="root">
-      <h1>${content}</h1>
+      ${content}
     </div>
   </body>
 </html>
