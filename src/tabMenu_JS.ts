@@ -6,7 +6,7 @@ const nameArr : string[] = ["구하림","김정수","송이현","이연승","정
 
 nameArr.forEach((item : string, index : number) : void =>{
   const li : HTMLLIElement = document.createElement('li');
-  li.innerHTML = `<a id="#menu${index}">${item}</a>`;
+  li.innerHTML = `<a href="#menu${index}">${item}</a>`;
   li.addEventListener('click',() : void => {
     console.log(window.location.hash);
   })
