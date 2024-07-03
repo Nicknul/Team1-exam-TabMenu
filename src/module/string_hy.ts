@@ -1,5 +1,5 @@
 const string = {
-  main: (content: string) => {
+  main: (content: string, src: string) => {
     return `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,6 +12,7 @@ const string = {
       ${content}
     </div>
   </body>
+  <script src="${src}"></script>
 </html>
 `;
   },
