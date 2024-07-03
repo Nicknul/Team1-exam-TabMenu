@@ -2,13 +2,35 @@
 function addStyles() {
   const style = document.createElement('style');
   style.innerHTML = `
-    .tab-content {
-      display: none;
-    }
-    .active {
-      display: block;
-    }
-  `;
+  .tab-content {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  li a {
+    text-decoration: none;
+    color: #333;
+  }
+  li a:hover {
+    text-decoration: underline;
+  }
+  li.active {
+    background-color: #ddd;
+  }
+`;
   document.head.appendChild(style);
 }
 
@@ -47,6 +69,16 @@ function updateContent() {
   }
 }
 
+// 클릭 이벤트를 처리하는 함수
+function handleClick(event: Event) {
+  event.preventDefault();
+  const target = event.target as HTMLAnchorElement;
+  const id = target.getAttribute('href');
+  if (id) {
+    window.location.hash = id;
+  }
+}
+
 // 초기화 함수
 function init() {
   const root = document.getElementById('root');
@@ -54,7 +86,13 @@ function init() {
     root.innerHTML = createHTMLStructure();
     window.addEventListener('hashchange', updateContent);
     updateContent();
+
+    const links = root.querySelectorAll('a');
+    links.forEach((link) => {
+      link.addEventListener('click', handleClick);
+    });
   }
+  addStyles();
 }
 
 // 초기화 함수 호출
