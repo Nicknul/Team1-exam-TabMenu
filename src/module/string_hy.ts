@@ -17,6 +17,6 @@ const string = {
   },
 };
 
-console.log(string.main('정호연'));
+// console.log(string.main('정호연'));
 
 module.exports = string;
