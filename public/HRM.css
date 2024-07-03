@@ -1,0 +1,13 @@
+.tab {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+.tab.active {
+  background-color: #aaa;
+}
+.content {
+  margin-top: 20px;
+}
