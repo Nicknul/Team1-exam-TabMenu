@@ -10,3 +10,5 @@ nameArr.forEach((item : string) : void =>{
   ul.appendChild(li);
 });
 
+root.appendChild(ul);
+
